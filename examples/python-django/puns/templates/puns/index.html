@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Pun Tracker</h1>
+    {% if latest_pun_list %}
+        {% for pun in latest_pun_list %}
+        <h2>{{ pun.name }}</h2>
+        <p>{{ pun.description}}</p>
+        <ul>
+          <li><a href='{% url 'puns:vote' pun.id %}'>Vote for this pun</a></li>
+          <li><a href='{% url 'puns:delete' pun.id %}'>Delete this pun</a></li>
+        </ul>
+        <small>Pun posted at {{ pun.pub_date }} has received <strong>{{ pun.vote }}</strong> votes.</small>
+        {% endfor %}
+    {% else %}
+        <p>No puns available!</p>
+    {% endif %}
+
+    <p>Submit a  <a href="{% url 'puns:create' %}">new pun!</a></p>
+{% endblock %}

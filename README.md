@@ -55,6 +55,9 @@ Current examples
   <tr>
     <td>Ruby</td><td>Rails3</td><td>SQLite</td>
   </tr>
+  <tr>
+    <td>Python</td><td>Django 1.5.1</td><td>My SQL</td>
+  </tr>
 </table>
 
 Bugs
